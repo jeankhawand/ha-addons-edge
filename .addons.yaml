@@ -1,0 +1,7 @@
+---
+channel: edge
+addons:
+  watchyourlan:
+    repository: jeankhawand/addon-watchyourlan
+    target: watchyourlan
+    image: ghcr.io/jeankhawand/watchyourlan/{arch}
