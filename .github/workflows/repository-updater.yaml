@@ -5,9 +5,19 @@ name: Repository Updater
 on:
   repository_dispatch:
     types: ["update"]
-
 jobs:
-  workflows:
-    uses: hassio-addons/workflows/.github/workflows/repository-updater.yaml@main
-    secrets:
-      UPDATER_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+  publish:
+    name: Publish add-on update
+    runs-on: ubuntu-latest
+    env:
+      GIT_AUTHOR_NAME: ${{ secrets.GIT_USERNAME }}
+      GIT_AUTHOR_EMAIL: ${{ secrets.GIT_EMAIL }}
+      GIT_COMMITTER_NAME: ${{ secrets.GIT_USERNAME }}
+      GIT_COMMITTER_EMAIL: ${{ secrets.GIT_EMAIL }}
+    steps:
+      - name: 🚀 Run Repository Updater
+        uses: hassio-addons/repository-updater@v1.3.0
+        with:
+          addon: ${{ github.event.client_payload.addon }}
+          repository: ${{ github.repository }}
+          token: ${{ secrets.DISPATCH_TOKEN }}
