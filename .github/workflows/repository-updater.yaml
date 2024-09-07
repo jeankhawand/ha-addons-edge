@@ -7,14 +7,7 @@ on:
     types: ["update"]
 
 jobs:
-  repo-updater:
-    name: Running updater for ${{ github.event.client_payload.addon }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🚀 Run Repository Updater
-        uses: hassio-addons/repository-updater@v1
-        with:
-          addon: ${{ github.event.client_payload.addon }}
-          version: ${{ github.event.client_payload.version }}
-          repository: ${{ github.repository }}
-          token: ${{ secrets.DISPATCH_TOKEN }}
+  workflows:
+    uses: hassio-addons/workflows/.github/workflows/repository-updater.yaml@main
+    secrets:
+      UPDATER_TOKEN: ${{ secrets.DISPATCH_EVENT }}
