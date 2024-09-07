@@ -1,1 +1,1 @@
-- releaser failing due to directory typo
+- lint(hadolint): ignore DL3018

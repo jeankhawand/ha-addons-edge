@@ -2,7 +2,7 @@ name: WatchYourLAN
 description: Lightweight network IP scanner. Can be used to notify about new hosts
   and monitor host online/offline history
 url: https://github.com/jeankhawand/addon-watchyourlan
-version: 709e9be
+version: c3a1c55
 slug: watchyourlan
 init: false
 host_network: true
