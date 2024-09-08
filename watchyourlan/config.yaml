@@ -2,14 +2,13 @@ name: WatchYourLAN
 description: Lightweight network IP scanner. Can be used to notify about new hosts
   and monitor host online/offline history
 url: https://github.com/jeankhawand/addon-watchyourlan
-version: c3a1c55
+version: 5b178f0
 slug: watchyourlan
 init: false
 host_network: true
 panel_icon: mdi:access-point-network
 panel_title: WatchYourLAN
 ingress: true
-ingress_port: 8840
 ingress_stream: true
 privileged:
 - NET_RAW
@@ -42,8 +41,6 @@ options:
   influx_bucket: test
   influx_org: home
   influx_token: ''
-ports_description:
-  8840/tcp: Web Interface
 schema:
   tz: str?
   theme: str
@@ -64,6 +61,4 @@ schema:
   influx_bucket: str?
   influx_org: str?
   influx_token: str?
-ports:
-  8840/tcp: 8840
 image: ghcr.io/jeankhawand/watchyourlan/{arch}
