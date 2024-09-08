@@ -1,5 +1,3 @@
-- Add Ingress support
+- Bump WatchYourLAN `2.0.1` to `2.0.2`
 
-- add nginx to setup ingress mode
-- use `sub_filter` to rewrite all request to `ingress_entry` this will fix broken assets and issue while navigating between different pages
-- update README
+**Full Changelog**: https://github.com/jeankhawand/addon-watchyourlan/compare/v2.0.1...v2.0.2
