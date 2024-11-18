@@ -2,7 +2,7 @@ name: WatchYourLAN
 description: Lightweight network IP scanner. Can be used to notify about new hosts
   and monitor host online/offline history
 url: https://github.com/jeankhawand/addon-watchyourlan
-version: 2.0.4
+version: 284652d
 slug: watchyourlan
 init: false
 host_network: true
@@ -20,7 +20,9 @@ arch:
 - armv7
 - i386
 map:
-- addon_config:rw
+- type: addon_config
+  read_only: false
+  path: /etc/watchyourlan
 options:
   tz: Europe/Paris
   theme: sand
